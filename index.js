@@ -26,9 +26,9 @@ const questions = [
             },
             {
                 type: 'list', 
-                message: "What do you want to do next?",
+                message: "Who do you want to Add next?",
                 name: 'choice1',
-                choices: ['Add a Engineer', 'Add a Intern', 'Finish my Team']
+                choices: ['Engineer', 'Intern', 'Finish my Team']
             },
             {
                 type: 'input',
@@ -52,9 +52,9 @@ const questions = [
             },
             {
                 type: 'list', 
-                message: "What do you want to do next?",
+                message: "Who do you want to Add next?",
                 name: 'choice2',
-                choices: ['Add a Engineer', 'Add a Intern', 'Finish my Team']
+                choices: ['Engineer', 'Intern', 'Finish my Team']
             },
             {
                 type: 'input',
@@ -107,6 +107,12 @@ function generateHTML(data) {
             * {
                 text-align: center;
             }
+            a {
+                color: white;
+            }
+            .title {
+                color: red;
+            }
         </style>
     </head>
     <body>
@@ -117,23 +123,24 @@ function generateHTML(data) {
         <div class="row">
             <div class="col container my-3 bg-primary text-white p-3">
                 <h2>${data.name1}</h2>
-                <h2>Manager</h2>
+                <h2 class="title">Manager</h2>
                 <p>${data.id1}</p>
                 <a href="${data.email1}">${data.email1}</a>
-                <p>${data.officeNum1}</p>
+                <p>Office ${data.officeNum1}</p>
             </div>
         </div>
         <div class="row">
             <div class="col container my-3 bg-primary text-white p-3">
                 <h2>${data.name2}</h2>
-                <h2>${data.choice1}</h2>
+                <h2 class="title">${data.choice1}</h2>
                 <p>${data.id2}</p>
                 <a href="${data.email2}">${data.email2}</a>
-                <a href="${data.github2}">${data.github2}</a>
+                <p></p>
+                <a href="https://github.com/${data.github2}">${data.github2}</a>
             </div>
             <div class="col container my-3 bg-primary text-white">
                 <h2>${data.name3}</h2>
-                <h2>${data.choice2}</h2>
+                <h2 class="title">${data.choice2}</h2>
                 <p>${data.id3}</p>
                 <a href="${data.email3}">${data.email3}</a>
                 <p>${data.school3}</p>
